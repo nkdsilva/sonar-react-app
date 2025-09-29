@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'nkdsilva/sonar-react-app'
+        DOCKER_HUB_REPO = 'nkdesilva/sonar-react-app'
         SONARQUBE = 'SonarQubeServer'
 	
     }
