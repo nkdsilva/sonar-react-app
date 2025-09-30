@@ -24,7 +24,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    sh 'npx sonar-scanner -Dsonar.branch.name=dev' //Initialize branch analysis
+                    sh 'npx sonar-scanner'  
                 }
             }
         }
@@ -35,7 +35,6 @@ pipeline {
             }
         }
         
-
         stage('Docker Build & Push') {
             steps {
                 sh 'docker build -t $DOCKER_HUB_REPO .'
