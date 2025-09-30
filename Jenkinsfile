@@ -16,7 +16,7 @@ pipeline {
 
         stage('Install & Test') {
             steps {
-                sh 'npm ci'
+                sh 'npm install'
                 sh 'npm test -- --coverage'
             }
         }
