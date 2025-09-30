@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18'   // or node:16 / node:20 depending on your project
-            args '-u root:root'  // so npm can install globally if needed
-        }
-    }
+    agent any
 
     environment {
         DOCKER_HUB_REPO = 'nkdesilva/sonar-react-app'
@@ -21,7 +16,8 @@ pipeline {
 
         stage('Install & Test') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
+                sh 'npm test -- --coverage'
             }
         }
 
