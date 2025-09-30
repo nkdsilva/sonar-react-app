@@ -24,7 +24,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    sh 'npx sonar-scanner'
+                    sh 'npx sonar-scanner -Dsonar.branch.name=dev'
                 }
             }
         }
