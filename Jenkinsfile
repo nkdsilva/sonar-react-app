@@ -82,7 +82,7 @@ pipeline {
             steps {
                 sshagent(['apache-server-key']) {
                     sh '''
-                    ssh ubuntu@15.134.33.63 "docker pull $DOCKER_HUB_REPO && docker stop react-app || true && docker rm react-app || true && docker run -d --name react-app -p 80:80 $DOCKER_HUB_REPO"
+                    ssh -o StrictHostKeyChecking=no ubuntu@15.134.33.63 "docker pull nkdesilva/sonar-react-app && docker stop react-app || true && docker rm react-app || true && docker run -d --name react-app -p 80:80 nkdesilva/sonar-react-app"
                     '''
                 }
             }
