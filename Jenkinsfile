@@ -1,9 +1,9 @@
 pipeline {
-    
+
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'nkdesilva/sonar-react-app'
+        //DOCKER_HUB_REPO = 'nkdesilva/sonar-react-app'
         SONARQUBE = 'SonarQubeServer'
         AWS_REGION = "ap-southeast-2"
         ECR_REPO = "public.ecr.aws/t3s0h7f3/nkdsilva/docker-app"
