@@ -1,5 +1,5 @@
 pipeline {
-    agent master
+    agent any
 
     environment {
         DOCKER_HUB_REPO = 'nkdesilva/sonar-react-app'
