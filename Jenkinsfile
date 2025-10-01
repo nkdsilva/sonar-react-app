@@ -72,7 +72,7 @@ pipeline {
             steps {
                 sh 'whoami'
                 sh 'id'
-                echo 'ssh whoami'
+                //echo 'ssh whoami'
                 // sh 'docker build -t $DOCKER_HUB_REPO .'
                 // withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 //     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
