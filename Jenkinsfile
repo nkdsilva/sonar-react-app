@@ -7,7 +7,6 @@ pipeline {
         AWS_REGION = "ap-southeast-2"
         ECR_REPO = "public.ecr.aws/t3s0h7f3/nkdsilva/docker-app"
         DOCKER_IMAGE = "${ECR_REPO}:${BUILD_NUMBER}"
-	
     }
 
     stages {
