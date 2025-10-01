@@ -35,6 +35,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 waitForQualityGate abortPipeline: true
+                
             }
         }
 
@@ -69,11 +70,12 @@ pipeline {
         
         stage('Docker Build & Push') {
             steps {
-                sh 'docker build -t $DOCKER_HUB_REPO .'
-                withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
-                    sh 'docker push $DOCKER_HUB_REPO'
-                }
+                echo 'ssh whoami'
+                // sh 'docker build -t $DOCKER_HUB_REPO .'
+                // withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                //     sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
+                //     sh 'docker push $DOCKER_HUB_REPO'
+                // }
             }
         }
 
